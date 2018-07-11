@@ -1,57 +1,57 @@
-#include <cstring>
-#include "LittleHand.h"
-#include "Banana.h"
-#include "Lemon.h"
-#include "Lime.h"
-
-void LittleHand::sortFruitBox(FruitBox &unsorted,
-	FruitBox &lemons, FruitBox &bananas, FruitBox &limes)
-{
-	int count = unsorted.nbFruits();
-	for (int i = 0; i < count; i++) {
-		bool res = false;
-		Fruit *f = unsorted.pickFruit();
-		if (dynamic_cast<Lime*>(f) != nullptr)
-			res = limes.putFruit(f);
-		else if (dynamic_cast<Lemon*>(f) != nullptr)
-			res = lemons.putFruit(f);
-		else if (dynamic_cast<Banana*>(f) != nullptr)
-			res = bananas.putFruit(f);
-		if (!res)
-			unsorted.putFruit(f);
-	}
-}
-
-FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)
-{
-	if (!coconuts)
-		return NULL;
-	size_t boxes = 0;
-	FruitBox **res = nullptr;
-	FruitBox **tmp;
-	while (*coconuts) {
-		tmp = new FruitBox*[boxes + 1];
-		memcpy(tmp, res, boxes * sizeof(*tmp));
-		delete[] res;
-		res = tmp;
-		res[boxes] = new FruitBox(6);
-		for (int i = 0; i < 6 && *coconuts; i++)
-			res[boxes]->putFruit(*coconuts++);
-		boxes++;
-	}
-	tmp = new FruitBox*[boxes + 1];
-	memcpy(tmp, res, boxes * sizeof(*tmp));
-	delete[] res;
-	tmp[boxes] = nullptr;
-	return (tmp);
-}
-
-void LittleHand::plugMixer(MixerBase &mixer)
-{
-	((Mixer&)mixer).plug();
-}
-
-void LittleHand::injectVitamin(Fruit &f, int quantity)
-{
-	f.setVitamins(quantity);
+#include <cstring>/* dream0630 */
+#include "LittleHand.h"/* dream0630 */
+#include "Banana.h"/* dream0630 */
+#include "Lemon.h"/* dream0630 */
+#include "Lime.h"/* dream0630 */
+/* dream0630 */
+void LittleHand::sortFruitBox(FruitBox &unsorted,/* dream0630 */
+	FruitBox &lemons, FruitBox &bananas, FruitBox &limes)/* dream0630 */
+{/* dream0630 */
+	int count = unsorted.nbFruits();/* dream0630 */
+	for (int i = 0; i < count; i++) {/* dream0630 */
+		bool res = false;/* dream0630 */
+		Fruit *f = unsorted.pickFruit();/* dream0630 */
+		if (dynamic_cast<Lime*>(f) != nullptr)/* dream0630 */
+			res = limes.putFruit(f);/* dream0630 */
+		else if (dynamic_cast<Lemon*>(f) != nullptr)/* dream0630 */
+			res = lemons.putFruit(f);/* dream0630 */
+		else if (dynamic_cast<Banana*>(f) != nullptr)/* dream0630 */
+			res = bananas.putFruit(f);/* dream0630 */
+		if (!res)/* dream0630 */
+			unsorted.putFruit(f);/* dream0630 */
+	}/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)/* dream0630 */
+{/* dream0630 */
+	if (!coconuts)/* dream0630 */
+		return NULL;/* dream0630 */
+	size_t boxes = 0;/* dream0630 */
+	FruitBox **res = nullptr;/* dream0630 */
+	FruitBox **tmp;/* dream0630 */
+	while (*coconuts) {/* dream0630 */
+		tmp = new FruitBox*[boxes + 1];/* dream0630 */
+		memcpy(tmp, res, boxes * sizeof(*tmp));/* dream0630 */
+		delete[] res;/* dream0630 */
+		res = tmp;/* dream0630 */
+		res[boxes] = new FruitBox(6);/* dream0630 */
+		for (int i = 0; i < 6 && *coconuts; i++)/* dream0630 */
+			res[boxes]->putFruit(*coconuts++);/* dream0630 */
+		boxes++;/* dream0630 */
+	}/* dream0630 */
+	tmp = new FruitBox*[boxes + 1];/* dream0630 */
+	memcpy(tmp, res, boxes * sizeof(*tmp));/* dream0630 */
+	delete[] res;/* dream0630 */
+	tmp[boxes] = nullptr;/* dream0630 */
+	return (tmp);/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+void LittleHand::plugMixer(MixerBase &mixer)/* dream0630 */
+{/* dream0630 */
+	((Mixer&)mixer).plug();/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+void LittleHand::injectVitamin(Fruit &f, int quantity)/* dream0630 */
+{/* dream0630 */
+	f.setVitamins(quantity);/* dream0630 */
 }/* dream0630 */

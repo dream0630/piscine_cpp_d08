@@ -1,22 +1,22 @@
-#include "LittleHand.h"
-#include "Banana.h"
-#include "Lemon.h"
-#include "Lime.h"
-
-void LittleHand::sortFruitBox(FruitBox &unsorted,
-	FruitBox &lemons, FruitBox &bananas, FruitBox &limes)
-{
-	int count = unsorted.nbFruits();
-	for (int i = 0; i < count; i++) {
-		bool res = false;
-		Fruit *f = unsorted.pickFruit();
-		if (dynamic_cast<Lime*>(f) != nullptr)
-			res = limes.putFruit(f);
-		else if (dynamic_cast<Lemon*>(f) != nullptr)
-			res = lemons.putFruit(f);
-		else if (dynamic_cast<Banana*>(f) != nullptr)
-			res = bananas.putFruit(f);
-		if (!res)
-			unsorted.putFruit(f);
-	}
+#include "LittleHand.h"/* dream0630 */
+#include "Banana.h"/* dream0630 */
+#include "Lemon.h"/* dream0630 */
+#include "Lime.h"/* dream0630 */
+/* dream0630 */
+void LittleHand::sortFruitBox(FruitBox &unsorted,/* dream0630 */
+	FruitBox &lemons, FruitBox &bananas, FruitBox &limes)/* dream0630 */
+{/* dream0630 */
+	int count = unsorted.nbFruits();/* dream0630 */
+	for (int i = 0; i < count; i++) {/* dream0630 */
+		bool res = false;/* dream0630 */
+		Fruit *f = unsorted.pickFruit();/* dream0630 */
+		if (dynamic_cast<Lime*>(f) != nullptr)/* dream0630 */
+			res = limes.putFruit(f);/* dream0630 */
+		else if (dynamic_cast<Lemon*>(f) != nullptr)/* dream0630 */
+			res = lemons.putFruit(f);/* dream0630 */
+		else if (dynamic_cast<Banana*>(f) != nullptr)/* dream0630 */
+			res = bananas.putFruit(f);/* dream0630 */
+		if (!res)/* dream0630 */
+			unsorted.putFruit(f);/* dream0630 */
+	}/* dream0630 */
 } /* dream0630 */

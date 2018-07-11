@@ -1,56 +1,56 @@
-#include "FruitBox.h"
-
-FruitBox::FruitBox(unsigned int capacity) :
-	_count(0), _capacity(capacity), _head(nullptr)
-{
-}
-
-FruitBox::~FruitBox()
-{
-	FruitNode *node = this->_head;
-	while (node) {
-		FruitNode *next = node->next;
-		delete node;
-		node = next;
-	}
-}
-
-int FruitBox::nbFruits() const
-{
-	return (this->_count);
-}
-
-bool FruitBox::putFruit(const Fruit *f)
-{
-	if (this->_count == this->_capacity)
-		return (false);
-	FruitNode **node_ptr = &this->_head;
-	while (*node_ptr) {
-		if (*node_ptr && (*node_ptr)->fruit == f)
-			return (false);
-		node_ptr = &(*node_ptr)->next;
-	}
-	FruitNode *node = new FruitNode;
-	node->fruit = f;
-	node->next = nullptr;
-	*node_ptr = node;
-	this->_count++;
-	return (true);
-}
-
-Fruit *FruitBox::pickFruit()
-{
-	FruitNode *node = this->_head;
-	if (!node)
-		return (nullptr);
-	this->_head = node->next;
-	const Fruit *res = node->fruit;
-	delete node;
-	this->_count--;
-	return ((Fruit*)res);
-}
-
-FruitNode *FruitBox::head() const
-{
-	return (this->_head);
+#include "FruitBox.h"/* dream0630 */
+/* dream0630 */
+FruitBox::FruitBox(unsigned int capacity) :/* dream0630 */
+	_count(0), _capacity(capacity), _head(nullptr)/* dream0630 */
+{/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+FruitBox::~FruitBox()/* dream0630 */
+{/* dream0630 */
+	FruitNode *node = this->_head;/* dream0630 */
+	while (node) {/* dream0630 */
+		FruitNode *next = node->next;/* dream0630 */
+		delete node;/* dream0630 */
+		node = next;/* dream0630 */
+	}/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+int FruitBox::nbFruits() const/* dream0630 */
+{/* dream0630 */
+	return (this->_count);/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+bool FruitBox::putFruit(const Fruit *f)/* dream0630 */
+{/* dream0630 */
+	if (this->_count == this->_capacity)/* dream0630 */
+		return (false);/* dream0630 */
+	FruitNode **node_ptr = &this->_head;/* dream0630 */
+	while (*node_ptr) {/* dream0630 */
+		if (*node_ptr && (*node_ptr)->fruit == f)/* dream0630 */
+			return (false);/* dream0630 */
+		node_ptr = &(*node_ptr)->next;/* dream0630 */
+	}/* dream0630 */
+	FruitNode *node = new FruitNode;/* dream0630 */
+	node->fruit = f;/* dream0630 */
+	node->next = nullptr;/* dream0630 */
+	*node_ptr = node;/* dream0630 */
+	this->_count++;/* dream0630 */
+	return (true);/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+Fruit *FruitBox::pickFruit()/* dream0630 */
+{/* dream0630 */
+	FruitNode *node = this->_head;/* dream0630 */
+	if (!node)/* dream0630 */
+		return (nullptr);/* dream0630 */
+	this->_head = node->next;/* dream0630 */
+	const Fruit *res = node->fruit;/* dream0630 */
+	delete node;/* dream0630 */
+	this->_count--;/* dream0630 */
+	return ((Fruit*)res);/* dream0630 */
+}/* dream0630 */
+/* dream0630 */
+FruitNode *FruitBox::head() const/* dream0630 */
+{/* dream0630 */
+	return (this->_head);/* dream0630 */
 } /* dream0630 */

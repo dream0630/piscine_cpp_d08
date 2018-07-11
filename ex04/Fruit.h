@@ -1,21 +1,21 @@
-#ifndef FRUIT_H_
-#define FRUIT_H_
-
-#include <string>
-
-class Fruit {
-public:
-	virtual ~Fruit() {}
-
-	virtual std::string getName() const;
-	int getVitamins() const;
-	void setVitamins(int vitamins);
-
-protected:
-	Fruit(std::string name, int vitamins);
-
-	const std::string _name;
-	int _vitamins;
-};
-
+#ifndef FRUIT_H_/* dream0630 */
+#define FRUIT_H_/* dream0630 */
+/* dream0630 */
+#include <string>/* dream0630 */
+/* dream0630 */
+class Fruit {/* dream0630 */
+public:/* dream0630 */
+	virtual ~Fruit() {}/* dream0630 */
+/* dream0630 */
+	virtual std::string getName() const;/* dream0630 */
+	int getVitamins() const;/* dream0630 */
+	void setVitamins(int vitamins);/* dream0630 */
+/* dream0630 */
+protected:/* dream0630 */
+	Fruit(std::string name, int vitamins);/* dream0630 */
+/* dream0630 */
+	const std::string _name;/* dream0630 */
+	int _vitamins;/* dream0630 */
+};/* dream0630 */
+/* dream0630 */
 #endif /* dream0630 */
