@@ -11,11 +11,11 @@ void LittleHand::sortFruitBox(FruitBox &unsorted,
 	for (int i = 0; i < count; i++) {
 		bool res = false;
 		Fruit *f = unsorted.pickFruit();
-		if (dynamic_cast<Lime*>(f) != nullptr)
+		if (dynamic_cast<Lime*>(f) != NULL)
 			res = limes.putFruit(f);
-		else if (dynamic_cast<Lemon*>(f) != nullptr)
+		else if (dynamic_cast<Lemon*>(f) != NULL)
 			res = lemons.putFruit(f);
-		else if (dynamic_cast<Banana*>(f) != nullptr)
+		else if (dynamic_cast<Banana*>(f) != NULL)
 			res = bananas.putFruit(f);
 		if (!res)
 			unsorted.putFruit(f);
@@ -27,7 +27,7 @@ FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)
 	if (!coconuts)
 		return NULL;
 	size_t boxes = 0;
-	FruitBox **res = nullptr;
+	FruitBox **res = NULL;
 	FruitBox **tmp;
 	while (*coconuts) {
 		tmp = new FruitBox*[boxes + 1];
@@ -42,7 +42,7 @@ FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)
 	tmp = new FruitBox*[boxes + 1];
 	memcpy(tmp, res, boxes * sizeof(*tmp));
 	delete[] res;
-	tmp[boxes] = nullptr;
+	tmp[boxes] = NULL;
 	return (tmp);
 }
 
