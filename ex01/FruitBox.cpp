@@ -1,13 +1,3 @@
-//
-// FruitBox.cpp for fruitbox in /home/gwendoline/Epitech/Tek2/Piscine_cpp/piscine_cpp_d14m/ex00
-//
-// Made by Gwendoline Rodriguez
-// Login   <gwendoline@epitech.eu>
-//
-// Started on  Tue Jan 19 12:23:52 2016 Gwendoline Rodriguez
-// Last update Tue Jan 19 12:37:58 2016 Gwendoline Rodriguez
-//
-
 #include "FruitBox.h"
 
 FruitBox::FruitBox(int size) : _size(size), _nbrFruits(0), _list(0) {}

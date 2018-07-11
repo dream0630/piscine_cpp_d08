@@ -1,13 +1,3 @@
-//
-// Banana.cpp for Banana in /home/gwendoline/Epitech/Tek2/Piscine_cpp/piscine_cpp_d14m/ex00
-//
-// Made by Gwendoline Rodriguez
-// Login   <gwendoline@epitech.net>
-//
-// Started on  Tue Jan 19 10:45:52 2016 Gwendoline Rodriguez
-// Last update Tue Jan 19 12:41:57 2016 Gwendoline Rodriguez
-//
-
 #include "Banana.h"
 
 Banana::Banana() : Fruit(5, "banana") {}

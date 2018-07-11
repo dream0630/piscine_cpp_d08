@@ -1,13 +1,3 @@
-//
-// Lime.cpp for Lime in /home/gwendoline/Epitech/Tek2/Piscine_cpp/piscine_cpp_d14m/ex01
-//
-// Made by Gwendoline Rodriguez
-// Login   <gwendoline@epitech.eu>
-//
-// Started on  Tue Jan 19 13:07:50 2016 Gwendoline Rodriguez
-// Last update Tue Jan 19 14:39:13 2016 Gwendoline Rodriguez
-//
-
 #include "Lime.h"
 
 Lime::Lime() {
