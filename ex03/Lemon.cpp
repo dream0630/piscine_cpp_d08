@@ -1,21 +1,11 @@
-#include <string>
-
 #include "Lemon.h"
 
-//DA
-Lemon::Lemon() : Fruit()
-{
-  this->_name = "lemon";
-  this->_vitamins = 3;
-}
-
-//RM
-Lemon::~Lemon()
+Lemon::Lemon() :
+	Fruit("lemon", 3)
 {
 }
 
-//E
-std::string	Lemon::getName() const
+Lemon::Lemon(std::string name, int vitamins) :
+	Fruit(name, vitamins)
 {
-  return (this->_name);
-} /*dream0630*/
+}/* dream0630 */

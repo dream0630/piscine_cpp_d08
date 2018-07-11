@@ -1,34 +1,22 @@
 #include "Mixer.h"
 
-//D
-int		mixit(FruitBox &src)
+static int mix(FruitBox &fruits)
 {
-  FruitNode	*list = src.head();
-  int		nbr_vitamine = 0;
-
-  while (list)
-    {
-      nbr_vitamine += list->f->getVitamins();
-      list = list->next;
-    }
-  return nbr_vitamine;
+	int res = 0;
+	FruitNode *node = fruits.head();
+	while (node) {
+		res += node->fruit->getVitamins();
+		node = node->next;
+	}
+	return (res);
 }
 
-//R
 Mixer::Mixer()
 {
-  this->_plugged = false;
-  this->_mixfunc = &mixit;
+	this->_mixfunc = ::mix;
 }
 
-//E
-Mixer::~Mixer()
+void Mixer::plug()
 {
-}
-
-//A
-void	Mixer::connect()
-{
-	//M
-  this->_plugged = true;
-} /*dream0630*/
+	this->_plugged = true;
+}/* dream0630 */

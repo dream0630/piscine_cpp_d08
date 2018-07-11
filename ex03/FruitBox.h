@@ -1,28 +1,25 @@
-#ifndef _FRUITBOX_H_
-#define _FRUITBOX_H_
+#ifndef FRUIT_BOX_H_
+#define FRUIT_BOX_H_
 
-#include "Fruit.h"
 #include "FruitNode.h"
 
-class		FruitBox
-{
- private:
-  int		size;
-  int		nbFruit;
-  FruitNode	*head_node;
+class FruitBox {
+public:
+	FruitBox(unsigned int capacity);
+	FruitBox(const FruitBox &other) = delete;
+	~FruitBox();
 
- public:
-  FruitBox(int size);
-  ~FruitBox();
+	FruitBox &operator=(const FruitBox &other) = delete;
 
-  int		getSize() const;
-  int		nbFruits() const;
+	int nbFruits() const;
+	bool putFruit(const Fruit *f);
+	Fruit *pickFruit();
+	FruitNode *head() const;
 
-  void		setHead(FruitNode *h);
-
-  bool		putFruit(Fruit* f);
-  Fruit*	pickFruit();
-  FruitNode*	head() const;
+private:
+	unsigned int _count;
+	const unsigned int _capacity;
+	FruitNode *_head;
 };
 
-#endif /* DREAM0630 */
+#endif /* dream0630 */

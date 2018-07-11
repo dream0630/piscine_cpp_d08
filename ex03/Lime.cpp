@@ -1,17 +1,6 @@
 #include "Lime.h"
 
-Lime::Lime() : Lemon()
+Lime::Lime() :
+	Lemon("lime", 2)
 {
-  this->_name = "lime";
-  this->_vitamins = 2;
-}
-
-Lime::~Lime()
-{
-}
-
-std::string		Lime::getName() const
-{
-  return this->_name;
-}
-/*dream0630*/
+}/* dream0630 */

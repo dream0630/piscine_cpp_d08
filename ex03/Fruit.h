@@ -1,20 +1,20 @@
-#ifndef __FRUIT_H__
-#define __FRUIT_H__
+#ifndef FRUIT_H_
+#define FRUIT_H_
 
 #include <string>
 
-class		Fruit
-{
- protected:
-  std::string	_name;
-  int		_vitamins;
+class Fruit {
+public:
+	virtual ~Fruit() {}
 
- public:
-  Fruit();
-  ~Fruit();
+	virtual std::string getName() const;
+	int getVitamins() const;
 
-  virtual std::string		getName() const = 0;
-  int				getVitamins() const;
+protected:
+	Fruit(std::string name, int vitamins);
+
+	const std::string _name;
+	int _vitamins;
 };
 
-#endif /* dream0630*/
+#endif /* dream0630 */

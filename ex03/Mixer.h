@@ -1,17 +1,13 @@
-#ifndef _MIXER_H_
-#define _MIXER_H_
+#ifndef MIXER_H_
+#define MIXER_H_
 
-#include <string>
-#include <iostream>
 #include "MixerBase.h"
 
-class Mixer : public MixerBase
-{
- public:
-  Mixer();
-  ~Mixer();
+class Mixer : public MixerBase {
+public:
+	Mixer();
 
-  void		connect();
+	void plug();
 };
 
-#endif /* dream.0630 */
+#endif /* dream0630 */

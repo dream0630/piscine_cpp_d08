@@ -1,16 +1,11 @@
-#ifndef __BANANA_H__
-#define __BANANA_H__
+#ifndef BANANA_H_
+#define BANANA_H_
 
-#include <string>
 #include "Fruit.h"
 
-class		Banana : public Fruit
-{
- public:
-  Banana();
-  ~Banana();
-
-  virtual std::string		getName() const;
+class Banana : public Fruit {
+public:
+	Banana();
 };
 
-#endif /* dream.0630 */
+#endif /* dream0630 */
