@@ -1,15 +1,23 @@
-#ifndef LEMON_H_
-#define LEMON_H_
+/**
+ * dream0630
+ */
 
+#ifndef LEMON_
+#define LEMON_
+
+#include <iostream>
 #include "Fruit.h"
 
-class Lemon : public Fruit
+class			Lemon : public Fruit
 {
-public:
-	Lemon();
 
-protected:
-	Lemon(std::string name, int vitamins);
+ public:
+
+  Lemon();
+  Lemon(std::string const&, int);
+  ~Lemon();
+
+  virtual std::string const&	getName() const;
 };
 
-#endif /*dream0630 */
+#endif

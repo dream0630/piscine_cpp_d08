@@ -1,17 +1,27 @@
-#ifndef LITTLE_HAND_H_
-#define LITTLE_HAND_H_
+/**
+ * dream0630
+ */
 
-#include "Coconut.h"
+#ifndef LITLLEHANDS_
+#define LITLLEHANDS_
+
 #include "FruitBox.h"
+#include "Coconut.h"
 
-class LittleHand {
-public:
-	static void sortFruitBox(FruitBox &unsorted,
-		FruitBox &lemons,
-		FruitBox &bananas,
-		FruitBox &limes);
-	static FruitBox * const *organizeCoconut(
-		Coconut const * const *coconuts);
+class		LittleHand
+{
+
+ public:
+
+  LittleHand();
+  ~LittleHand();
+
+  static void sortFruitBox(FruitBox& unsorted,
+		    FruitBox& lemons,
+		    FruitBox& bananas,
+		    FruitBox& limes);
+
+  static FruitBox* const* organizeCoconut(Coconut const* const* coconuts_packet);
 };
 
-#endif /* dream0630 */
+#endif

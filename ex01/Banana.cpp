@@ -1,6 +1,18 @@
+/**
+ * dream0630
+ */
+
 #include "Banana.h"
 
-Banana::Banana() :
-	Fruit("banana", 5)
+Banana::Banana() : Fruit("banana", 5)
 {
-} /*dream0630*/
+}
+
+Banana::~Banana()
+{
+}
+
+std::string	const&	Banana::getName() const
+{
+  return _name;
+}

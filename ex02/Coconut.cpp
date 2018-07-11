@@ -1,6 +1,18 @@
+/**
+ * dream0630
+ */
+
 #include "Coconut.h"
 
-Coconut::Coconut() :
-	Fruit("coconut", 15)
+Coconut::Coconut() : Fruit("coconut", 15)
 {
-} /*dream0630*/
+}
+
+Coconut::~Coconut()
+{
+}
+
+std::string const&		Coconut::getName() const
+{
+  return _name;
+}

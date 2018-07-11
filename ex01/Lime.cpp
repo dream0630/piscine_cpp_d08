@@ -1,6 +1,13 @@
+/**
+ * dream0630
+ */
+
 #include "Lime.h"
 
-Lime::Lime() :
-	Lemon("lime", 2)
+Lime::Lime() : Lemon("lime", 2)
 {
-} /*dream0630*/
+}
+
+Lime::~Lime()
+{
+}
