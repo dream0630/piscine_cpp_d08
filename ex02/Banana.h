@@ -1,22 +1,11 @@
-/**
- * dream0630
- */
+#ifndef BANANA_H_
+#define BANANA_H_
 
-#ifndef BANANA_
-#define BANANA_
-
-#include <iostream>
 #include "Fruit.h"
 
-class			Banana : public Fruit
-{
-
- public:
-
-  Banana();
-  ~Banana();
-
-  virtual std::string const&	getName() const;
+class Banana : public Fruit {
+public:
+	Banana();
 };
 
-#endif
+#endif /* dream0630 */

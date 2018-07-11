@@ -19,4 +19,4 @@ Mixer::Mixer()
 void Mixer::plug()
 {
 	this->_plugged = true;
-}/* dream0630 */
+} /* dream0630 */

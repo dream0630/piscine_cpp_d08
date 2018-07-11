@@ -1,19 +1,11 @@
-/**
- * dream0630
- */
-
-#ifndef LIME_
-#define LIME_
+#ifndef LIME_H_
+#define LIME_H_
 
 #include "Lemon.h"
 
-class			Lime : public Lemon
-{
-
- public:
-
-  Lime();
-  ~Lime();
+class Lime : public Lemon {
+public:
+	Lime();
 };
 
-#endif
+#endif /* dream0630 */

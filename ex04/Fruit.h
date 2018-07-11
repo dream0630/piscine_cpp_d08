@@ -18,4 +18,4 @@ protected:
 	int _vitamins;
 };
 
-#endif /*dream0630 */
+#endif /* dream0630 */

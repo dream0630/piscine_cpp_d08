@@ -1,17 +1,14 @@
-#ifndef LITTLEHAND_H
-#define LITTLEHAND_H
+#ifndef LITTLE_HAND_H_
+#define LITTLE_HAND_H_
 
-#include <iostream>
-#include "Lemon.h"
 #include "FruitBox.h"
 
-class           LittleHand {
- public:
-  static void sortFruitBox(FruitBox& unsorted,
-			   FruitBox& lemons,
-			   FruitBox& bananas,
-			   FruitBox& limes);
-
+class LittleHand {
+public:
+	static void sortFruitBox(FruitBox &unsorted,
+		FruitBox &lemons,
+		FruitBox &bananas,
+		FruitBox &limes);
 };
 
-#endif
+#endif /* dream0630 */

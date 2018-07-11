@@ -1,20 +1,13 @@
-/**
- * dream0630
- */
-
-#ifndef FRUITNODE_
-#define FRUITNODE_
+#ifndef FRUIT_NODE_H_
+#define FRUIT_NODE_H_
 
 #include "Fruit.h"
 
-typedef struct s_FruitNode FruitNode;
+#define Fruitnode FruitNode
 
+typedef struct FruitNode {
+	const Fruit *fruit;
+	struct FruitNode *next;
+} FruitNode;
 
-struct s_FruitNode
-{
-  Fruit const*	elem;
-  FruitNode*	next;
-};
-
-
-#endif
+#endif /* dream0630 */

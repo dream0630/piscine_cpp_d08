@@ -8,4 +8,4 @@ public:
 	Coconut();
 };
 
-#endif /*dream0630 */
+#endif /* dream0630 */

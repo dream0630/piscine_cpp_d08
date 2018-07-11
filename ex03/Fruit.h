@@ -1,5 +1,5 @@
-#ifndef FRUIT_H_
-#define FRUIT_H_
+#ifndef FRUIT_h_
+#define FRUIT_h_
 
 #include <string>
 

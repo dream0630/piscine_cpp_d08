@@ -1,17 +1,11 @@
-#ifndef LIME_H
-#define LIME_H
+#ifndef LIME_H_
+#define LIME_H_
 
 #include "Lemon.h"
 
-class           Lime : public Lemon {
- public:
-  Lime();
-  Lime(Lime const&);
-  Lime& operator=(Lime const&);
-  virtual ~Lime();
-
-  virtual std::string  getName() const;
-  virtual int           getVitamins() const;
+class Lime : public Lemon {
+public:
+	Lime();
 };
 
-#endif
+#endif /* dream0630 */

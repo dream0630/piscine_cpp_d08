@@ -1,7 +1,7 @@
 #include "FruitBox.h"
 
 FruitBox::FruitBox(unsigned int capacity) :
-	_count(0), _capacity(capacity), _head(NULL)
+	_count(0), _capacity(capacity), _head(nullptr)
 {
 }
 
@@ -32,7 +32,7 @@ bool FruitBox::putFruit(const Fruit *f)
 	}
 	FruitNode *node = new FruitNode;
 	node->fruit = f;
-	node->next = NULL;
+	node->next = nullptr;
 	*node_ptr = node;
 	this->_count++;
 	return (true);
@@ -42,7 +42,7 @@ Fruit *FruitBox::pickFruit()
 {
 	FruitNode *node = this->_head;
 	if (!node)
-		return (NULL);
+		return (nullptr);
 	this->_head = node->next;
 	const Fruit *res = node->fruit;
 	delete node;
@@ -53,4 +53,4 @@ Fruit *FruitBox::pickFruit()
 FruitNode *FruitBox::head() const
 {
 	return (this->_head);
-}/* dream0630 */
+} /* dream0630 */

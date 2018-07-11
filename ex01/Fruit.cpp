@@ -1,15 +1,16 @@
-#include "Lemon.h"
-#include "FruitBox.h"
+#include "Fruit.h"
 
-Fruit::Fruit(int vitamins, std::string const& name) : _vitamins(vitamins), _name(name) {}
-
-Fruit::Fruit(Fruit const& f) : _vitamins(f._vitamins), _name(f._name) {
+Fruit::Fruit(std::string name, int vitamins) :
+	_name(name), _vitamins(vitamins)
+{
 }
 
-Fruit&	Fruit::operator=(Fruit const &f) {
-  this->_name = f._name;
-  this->_vitamins = f._vitamins;
-  return *this;
+std::string Fruit::getName() const
+{
+	return (this->_name);
 }
 
-Fruit::~Fruit() {}
+int Fruit::getVitamins() const
+{
+	return (this->_vitamins);
+} /* dream0630 */

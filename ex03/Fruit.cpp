@@ -13,4 +13,4 @@ std::string Fruit::getName() const
 int Fruit::getVitamins() const
 {
 	return (this->_vitamins);
-}/* dream0630 */
+} /* dream0630 */

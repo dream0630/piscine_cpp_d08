@@ -18,4 +18,4 @@ int Fruit::getVitamins() const
 void Fruit::setVitamins(int vitamins)
 {
 	this->_vitamins = vitamins;
-}/*dream0630 */
+} /* dream0630 */

@@ -8,4 +8,4 @@ Lemon::Lemon() :
 Lemon::Lemon(std::string name, int vitamins) :
 	Fruit(name, vitamins)
 {
-}/* dream0630 */
+} /* dream0630 */

@@ -1,22 +1,11 @@
-/**
- * dream0630
- */
+#ifndef COCONUT_H_
+#define COCONUT_H_
 
-#ifndef COCONUT_
-#define COCONUT_
-
-#include <iostream>
 #include "Fruit.h"
 
-class			Coconut : public Fruit
-{
-
- public:
-
-  Coconut();
-  ~Coconut();
-
-  virtual std::string const&	getName() const;
+class Coconut : public Fruit {
+public:
+	Coconut();
 };
 
-#endif
+#endif /* dream0630 */

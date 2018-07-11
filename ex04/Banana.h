@@ -8,4 +8,4 @@ public:
 	Banana();
 };
 
-#endif /*dream0630 */
+#endif /* dream0630 */

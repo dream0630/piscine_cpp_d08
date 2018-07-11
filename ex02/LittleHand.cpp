@@ -1,74 +1,47 @@
-/**
- * dream0630
- */
-
+#include <cstring>
 #include "LittleHand.h"
+#include "Banana.h"
+#include "Lemon.h"
+#include "Lime.h"
 
-
-LittleHand::LittleHand()
+void LittleHand::sortFruitBox(FruitBox &unsorted,
+	FruitBox &lemons, FruitBox &bananas, FruitBox &limes)
 {
+	int count = unsorted.nbFruits();
+	for (int i = 0; i < count; i++) {
+		bool res = false;
+		Fruit *f = unsorted.pickFruit();
+		if (dynamic_cast<Lime*>(f) != nullptr)
+			res = limes.putFruit(f);
+		else if (dynamic_cast<Lemon*>(f) != nullptr)
+			res = lemons.putFruit(f);
+		else if (dynamic_cast<Banana*>(f) != nullptr)
+			res = bananas.putFruit(f);
+		if (!res)
+			unsorted.putFruit(f);
+	}
 }
 
-LittleHand::~LittleHand()
+FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)
 {
-}
-
-void		LittleHand::sortFruitBox(FruitBox& unsorted,
-					  FruitBox& lemons,
-					  FruitBox& bananas,
-					  FruitBox& limes)
-{
-  FruitBox	tmp(unsorted.nbFruits());
-  Fruit*	ret;
-  
-  while (unsorted.head() && unsorted.head()->elem)
-    {
-      if (unsorted.head()->elem->getName() == "banana")
-	{
-	  ret = unsorted.pickFruit();
-	  if (!(bananas.putFruit(ret)))
-	    tmp.putFruit(ret);
+	if (!coconuts)
+		return NULL;
+	size_t boxes = 0;
+	FruitBox **res = nullptr;
+	FruitBox **tmp;
+	while (*coconuts) {
+		tmp = new FruitBox*[boxes + 1];
+		memcpy(tmp, res, boxes * sizeof(*tmp));
+		delete[] res;
+		res = tmp;
+		res[boxes] = new FruitBox(6);
+		for (int i = 0; i < 6 && *coconuts; i++)
+			res[boxes]->putFruit(*coconuts++);
+		boxes++;
 	}
-      else if (unsorted.head()->elem->getName() == "lemon")
-	{
-	  ret = unsorted.pickFruit();
-	  if (!(lemons.putFruit(ret)))
-	    tmp.putFruit(ret);
-	}
-      else if (unsorted.head()->elem->getName() == "lime")
-	{
-	  ret = unsorted.pickFruit();
-	  if (!(limes.putFruit(ret)))
-	    tmp.putFruit(ret);
-	}
-      else
-	tmp.putFruit(unsorted.pickFruit());;
-    }
-  while (tmp.head() && tmp.head()->elem)
-    unsorted.putFruit(tmp.pickFruit());
-}
-
-
-FruitBox* const* LittleHand::organizeCoconut(Coconut const* const* coconuts_packet)
-{
-  FruitBox**	ret;
-  unsigned int	i = -1;
-  unsigned int	k = 0;
-  
-  while (coconuts_packet[++i]);
-  ret = new FruitBox*[i/6 + 1];
-  i = 0;
-  while (coconuts_packet[i])
-    {
-      ret[k] = new FruitBox(6);
-      for (unsigned int j = 0; j != 6; j++)
-	{
-	  if (!coconuts_packet[i])
-	    return const_cast<FruitBox* const*>(ret);
-	  ret[k]->putFruit(coconuts_packet[i]);
-	  i++;
-	}
-      k++;
-    }
-  return const_cast<FruitBox* const*>(ret);
-}
+	tmp = new FruitBox*[boxes + 1];
+	memcpy(tmp, res, boxes * sizeof(*tmp));
+	delete[] res;
+	tmp[boxes] = nullptr;
+	return (tmp);
+} /* dream0630 */
