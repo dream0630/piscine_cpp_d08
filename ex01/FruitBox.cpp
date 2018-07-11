@@ -1,84 +1,59 @@
-/**
- * dream0630
- */
+//
+// FruitBox.cpp for fruitbox in /home/gwendoline/Epitech/Tek2/Piscine_cpp/piscine_cpp_d14m/ex00
+//
+// Made by Gwendoline Rodriguez
+// Login   <gwendoline@epitech.eu>
+//
+// Started on  Tue Jan 19 12:23:52 2016 Gwendoline Rodriguez
+// Last update Tue Jan 19 12:37:58 2016 Gwendoline Rodriguez
+//
 
 #include "FruitBox.h"
 
-FruitBox::FruitBox(int size) : _size(size), _list(NULL)
-{
+FruitBox::FruitBox(int size) : _size(size), _nbrFruits(0), _list(0) {}
+
+FruitBox::~FruitBox() {}
+
+int FruitBox::nbFruits() const {
+return this->_nbrFruits;
 }
 
-FruitBox::~FruitBox()
-{
-  FruitNode*	del;
+bool FruitBox::putFruit(Fruit* f) {
+    FruitNode   *tmp;
+    FruitNode   *elt;
 
-  while (_list)
-    {
-      del = _list;
-      _list = _list->next;
-      delete del;
+    tmp = this->_list;
+    if (this->_nbrFruits == this->_size)
+        return false;
+    while (tmp != 0 && tmp->fruit != f)
+        tmp = tmp->next;
+    if (tmp != 0)
+        return false;
+    elt = new FruitNode();
+    elt->fruit = f;
+    elt->next = 0;
+    tmp = this->_list;
+    if (tmp == 0)
+        this->_list = elt;
+    else {
+        while (tmp != 0 && tmp->next != 0)
+            tmp = tmp->next;
+        tmp->next = elt;
     }
+    ++this->_nbrFruits;
+    return true;
 }
 
-int		FruitBox::nbFruits() const
-{
-  FruitNode*	tmp = _list;
-  int		count = 0;
+Fruit* FruitBox::pickFruit() {
+    Fruit  *fruit;
 
-  while (tmp && tmp->elem != NULL)
-    {
-      count++;
-      tmp = tmp->next;
-    }
-  return count;
+    fruit = this->_list ? this->_list->fruit : 0;
+    if (this->_list != 0)
+        this->_list = this->_list->next;
+    --this->_nbrFruits;
+    return fruit;
 }
 
-bool		FruitBox::putFruit(Fruit const* add)
-{
-  FruitNode*	tmp = _list;
-  FruitNode*	last = new FruitNode;
-
-  last->elem = add;
-  last->next = NULL;
-  if (nbFruits() >= _size)
-    return false;
-  else if (tmp == NULL)
-    {
-      _list = last;
-      return true;
-    }
-  while (tmp->next)
-    {
-      if (tmp->elem == add)
-	return false;
-      tmp = tmp->next;
-    }
-  if (tmp->elem == add)
-    return false;
-  tmp->next = last;
-  return true;
-}
-
-Fruit*		FruitBox::pickFruit()
-{
-  FruitNode*	tmp = _list;
-  Fruit const*	ret;
-  
-  while (tmp)
-    {
-      if (tmp->elem)
-	{
-	  ret = tmp->elem;
-	  _list = _list->next;
-	  delete tmp;
-	  return const_cast<Fruit*>(ret);
-	}
-      tmp = tmp->next;
-    }
-  return NULL;
-}
-
-FruitNode*		FruitBox::head() const
-{
-  return _list;
+FruitNode* FruitBox::head() {
+    return this->_list;
 }

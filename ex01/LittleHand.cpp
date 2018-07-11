@@ -1,49 +1,38 @@
-/**
- * dream0630
- */
+//
+// LittleHand.cpp for LittleHand in /home/gwendoline/Epitech/Tek2/Piscine_cpp/piscine_cpp_d14m/ex01
+//
+// Made by Gwendoline Rodriguez
+// Login   <gwendoline@epitech.eu>
+//
+// Started on  Tue Jan 19 14:27:22 2016 Gwendoline Rodriguez
+// Last update Tue Jan 19 14:27:54 2016 Gwendoline Rodriguez
+//
 
 #include "LittleHand.h"
 
-
-LittleHand::LittleHand()
-{
-}
-
-LittleHand::~LittleHand()
-{
-}
-
-void		LittleHand::sortFruitBox(FruitBox& unsorted,
-					  FruitBox& lemons,
-					  FruitBox& bananas,
-					  FruitBox& limes)
-{
-  FruitBox	tmp(unsorted.nbFruits());
-  Fruit*	ret;
-  
-  while (unsorted.head() && unsorted.head()->elem)
-    {
-      if (unsorted.head()->elem->getName() == "banana")
-	{
-	  ret = unsorted.pickFruit();
-	  if (!(bananas.putFruit(ret)))
-	    tmp.putFruit(ret);
-	}
-      else if (unsorted.head()->elem->getName() == "lemon")
-	{
-	  ret = unsorted.pickFruit();
-	  if (!(lemons.putFruit(ret)))
-	    tmp.putFruit(ret);
-	}
-      else if (unsorted.head()->elem->getName() == "lime")
-	{
-	  ret = unsorted.pickFruit();
-	  if (!(limes.putFruit(ret)))
-	    tmp.putFruit(ret);
-	}
-      else
-	tmp.putFruit(unsorted.pickFruit());;
+void LittleHand::sortFruitBox(FruitBox& unsorted,
+                              FruitBox& lemons,
+                              FruitBox& bananas,
+                              FruitBox& limes) {
+  FruitBox    tmp(unsorted.nbFruits());
+  Fruit       *fruit;
+  while ((fruit = unsorted.pickFruit())) {
+    if (fruit->getName() == "lemon") {
+      if (!lemons.putFruit(fruit))
+	tmp.putFruit(fruit);
     }
-  while (tmp.head() && tmp.head()->elem)
-    unsorted.putFruit(tmp.pickFruit());
+    else if (fruit->getName() == "lime") {
+      if (!limes.putFruit(fruit))
+	tmp.putFruit(fruit);
+    }
+    else if (fruit->getName() == "banana") {
+      if (!bananas.putFruit(fruit))
+	tmp.putFruit(fruit);
+    }
+    else            tmp.putFruit(fruit);
+  }
+  while ((fruit = tmp.pickFruit())) {
+    unsorted.putFruit(fruit);
+  }
 }
+
